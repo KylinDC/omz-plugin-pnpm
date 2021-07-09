@@ -1,7 +1,7 @@
-if ! (( $+commands[pnpm] )); then
-  print "zsh pnpm plugin: pnpm not found. Please install pnpm before using this plugin." >&2
-  return 1
-fi
+# if ! (( $+commands[pnpm] )); then
+#   print "zsh pnpm plugin: pnpm not found. Please install pnpm before using this plugin." >&2
+#   return 1
+# fi
 
 # ALIASES
 
