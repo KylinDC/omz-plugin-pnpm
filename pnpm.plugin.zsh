@@ -29,9 +29,9 @@ alias pgu='pnpm update --global'
 
 # Scripts
 alias prun='pnpm run'
-alias pd='pnpm run dev'
-alias pb='pnpm run build'
-alias ps='pnpm run serve'
+alias prd='pnpm run dev'
+alias prb='pnpm run build'
+alias prs='pnpm run serve'
 alias pst='pnpm start'
 alias pt='pnpm test'
 alias ptc='pnpm test --coverage'
