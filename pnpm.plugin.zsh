@@ -46,3 +46,19 @@ alias psv='pnpm server'
 
 # pnpx
 alias px='pnpx'
+
+# pnpm completion
+if (( $+commands[pnpm] )) &>/dev/null; then
+    _pnpm_completion() {
+        local reply
+        local si=$IFS
+
+        IFS=$'\n'
+        reply=($(COMP_CWORD="$((CURRENT-1))" COMP_LINE="$BUFFER" COMP_POINT="$CURSOR" pnpm completion -- "${words[@]}"))
+        IFS=$si
+
+        _describe 'values' reply
+    }
+
+    compdef _pnpm_completion pnpm
+fi
