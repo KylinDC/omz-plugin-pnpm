@@ -1,34 +1,49 @@
-# pnpm plugin
+# omz-plugin-pnpm
 
-Aliases for common [pnpm](https://pnpm.io) commands.
+oh-my-zsh aliases for common [pnpm](https://pnpm.io) commands.
 
 ## Installation
 
--   [Oh My Zsh](#oh-my-zsh)
--   [Zinit](#zinit)
+- [Oh My Zsh](#oh-my-zsh)
+- [Zinit](#zinit)
 
 ### Oh My Zsh
 
 1. Clone the repository:
-    ```zsh
-    git clone --depth=1 https://github.com/ntnyq/omz-plugin-pnpm.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/pnpm
-    ```
+
+```zsh
+git clone --depth=1 https://github.com/ntnyq/omz-plugin-pnpm.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/pnpm
+```
+
 2. Include it in your `~/.zshrc`:
-    ```zsh
-    plugins=(... pnpm)
-    ```
+
+```zsh
+plugins=(... pnpm)
+```
 
 ### Zinit
 
 Add script bellow to your `~/.zshrc`
- 
+
 ```shell
 zinit light ntnyq/omz-plugin-pnpm
 ```
 
-### Other
+### Others
 
-PRs are welcome!
+PRs are always welcome!
+
+## Global scripts directory
+
+> This feature is copied from [omz-plugin-yarn](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/yarn)
+
+Adding pnpm global scripts dir (commonly ~/Library/pnpm) to the `$PATH`. 
+
+To disable this feature, set the following style in your .zshrc:
+
+```
+zstyle ':omz:plugins:pnpm' global-path false
+```
 
 ## Aliases
 
@@ -48,6 +63,7 @@ PRs are welcome!
 | pgu   | `pnpm update --global`               | Upgrade packages installed globally to their latest version                   |
 | pi    | `pnpm init`                          | Interactively creates or updates a package.json file                          |
 | pin   | `pnpm install`                       | Install dependencies defined in `package.json`                                |
+| pr    | `pnpm run`                           | Run a defined package script                                                  |
 | prun  | `pnpm run`                           | Run a defined package script                                                  |
 | pst   | `pnpm start`                         | Run the start script defined in `package.json`                                |
 | pln   | `pnpm run lint`                      | Run the lint script defined in `package.json`                                 |
@@ -65,10 +81,20 @@ PRs are welcome!
 
 ## CHANGELOG
 
+### 2023-03-15
+
+- Features
+  - Add pnpm global scripts dir to `$PATH`
+
+### 2022-12-16
+
+- New aliases
+  - `pr` for `pnpm run`
+
 ### 2022-09-24
 
 - New aliases
-  - `pf` for `pnpm -r --filter`  
+  - `pf` for `pnpm -r --filter`
 
 ### 2022-07-15
 
